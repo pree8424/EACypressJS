@@ -1,0 +1,16 @@
+{
+    "streetaddress" : "123 abc street",
+    "city" : "Dallas",
+    "state" : "Texas",
+    "zipcode" : "75218",
+    "hometype": "Single Family",
+    "estvalue": "700000",
+    "morgagebalance": "538000",
+    "estcashneeded": "30000",
+    "plantomove": "yes",
+    "inmonths" : "3",
+    "fname" : "John",
+    "lname": "Smith",
+    "email": "johns@abc.com", 
+    "phone" :"1234567890"
+}

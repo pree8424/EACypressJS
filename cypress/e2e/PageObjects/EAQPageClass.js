@@ -1,0 +1,89 @@
+class Form
+{
+    setStreetAddress(streetAddress)
+    {
+        cy.get('input[name=streetAddress]').type(streetAddress);
+    }
+    setCity(city)
+    {
+        cy.get('#City').type(city);
+    }
+    setState(state)
+    {
+        cy.get('div[role="select"]').then(dropdown =>{
+            cy.wrap(dropdown).click()          
+        })
+        cy.get('li[role="listboxitem"]').contains(state).click()
+    }
+    setZipCode(zipcode)
+    {
+        cy.get('input[name=zipCode]').type(zipcode);
+    }
+    clickContinue()
+    {
+        cy.get('button[type=submit]').click();
+    }
+    setHomeType(hometype)
+    {
+        cy.get('div[role="select"]').then(dropdown =>{
+            cy.wrap(dropdown).click();      
+        })
+        cy.get('li[role="listboxitem"]').contains(hometype).click();
+    }
+    setEstimatedHomeValue(estHomeValue)
+    {
+        cy.get('#EstimatedHomeValue').type(estHomeValue);
+    }
+    setMorgageBalance(balance)
+    {
+        cy.get('#MortgageBalance').type(balance)
+    }
+    setEstimatedcashNeeded(estCashNeeded)
+    {
+        cy.get('#CashDesired').type(estCashNeeded)
+    }
+    setPlanToMove(plan)
+    {
+        if(plan == "yes")
+            cy.get('button[value="move"]').click()
+        else
+            cy.get('button[value="stay"]').click()
+    }
+    setTimeline(NoOfMonths)
+    {
+        cy.get('div[role="select"]').then(dropdown =>{
+            cy.wrap(dropdown).click();      
+        })
+        cy.get('li[role="listboxitem"]').contains(NoOfMonths).click();
+    }
+    setFirstName(fname)
+    {
+        cy.get('input[name="firstName"]').type(fname)
+    }
+    setLastName(lname)
+    {
+        cy.get('input[name="lastName"]').type(lname)
+    }
+    setEmail(email)
+    {
+        cy.get('input[name="email"]').type(email)
+    }
+    setPhoneNumber(phonenumber)
+    {
+        cy.get('input[name="phone"]').type(phonenumber)
+    }
+    clickSubmit()
+    {
+        cy.get('button[type="submit"]').click()
+    }
+    verifyErrorMessage(error)
+    {
+        cy.get('span[color="#C70000"]').should('have.text', error)
+    }
+    clearTextbox()
+    {
+        cy.get('input[name=streetAddress]').focus().clear();
+    }
+}
+
+export default Form;
