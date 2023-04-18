@@ -2,7 +2,7 @@ class Form
 {
     setStreetAddress(streetAddress)
     {
-        cy.get('input[name=streetAddress]').type(streetAddress);
+        cy.get('input[name="streetAddress"]').type(streetAddress);
     }
     setCity(city)
     {
@@ -17,11 +17,11 @@ class Form
     }
     setZipCode(zipcode)
     {
-        cy.get('input[name=zipCode]').type(zipcode);
+        cy.get('input[name="zipCode"]').type(zipcode);
     }
     clickContinue()
     {
-        cy.get('button[type=submit]').click();
+        cy.get('button[type="submit"]').click();
     }
     setHomeType(hometype)
     {

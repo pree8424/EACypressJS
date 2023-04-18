@@ -8,6 +8,10 @@ describe('EAQFormasSmokeTests', () => {
         cy.contains('Accept and close').click()
       })
 
+    it('Test1- verify the URL' , () => {
+        cy.get('#WelcomeHeader').should('have.text', "Welcome to EasyKnock!")
+     })
+
     it('Verify Qualification Forms is opened and verify the title' , () => {
         cy.get('#WelcomeHeader').should('have.text', "Welcome to EasyKnock!")
     })
@@ -102,5 +106,4 @@ describe('EAQFormasSmokeTests', () => {
         form.verifyErrorMessage("Street Address Required")
         form.clearTextbox()
     })
-
 })
